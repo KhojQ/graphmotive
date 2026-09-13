@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GraphMotive — Context, Reasoning & Provenance for LLM Systems</title>
+<meta name="description" content="GraphMotive.com — a premium domain positioned for GraphRAG, context graphs, agent memory, provenance and explainable LLM infrastructure.">
+<meta name="theme-color" content="#090b0d">
+<meta property="og:title" content="GraphMotive — The reasoning layer behind connected intelligence">
+<meta property="og:description" content="A premium domain positioned for GraphRAG, context graphs, agent memory, provenance and explainable LLM infrastructure.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://graphmotive.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#090b0d;--ink:#f3f5f2;--muted:#9ba5a0;--line:rgba(255,255,255,.11);--accent:#c9f3d5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:radial-gradient(900px 560px at 82% 8%,rgba(77,151,102,.15),transparent 63%),linear-gradient(180deg,#090b0d,#07090b);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:52px 52px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:25px 5vw;border-bottom:1px solid var(--line);position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.14em;font-size:12px}.navmeta{font-size:12px;color:var(--muted)}
+.logo{width:24px;height:24px;position:relative}.logo i{position:absolute;width:7px;height:7px;border:1px solid rgba(210,246,221,.85);border-radius:50%}.logo i:nth-child(1){left:0;top:8px}.logo i:nth-child(2){right:0;top:0}.logo i:nth-child(3){right:0;bottom:0}.logo:before,.logo:after{content:"";position:absolute;height:1px;background:rgba(210,246,221,.48);left:6px;width:17px}.logo:before{top:11px;transform:rotate(-27deg)}.logo:after{top:12px;transform:rotate(27deg)}
+.hero{min-height:82vh;display:grid;grid-template-columns:1.04fr .96fr;gap:6vw;align-items:center;padding:7vh 5vw 5vh}
+.kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#b9d7c3;margin-bottom:23px}
+h1{font-size:clamp(58px,7.7vw,118px);line-height:.89;letter-spacing:-.062em;margin:0 0 30px;max-width:980px}.lead{font-size:clamp(18px,1.85vw,27px);line-height:1.5;color:#c6cec9;max-width:760px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 19px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:800;color:inherit}.primary{background:#eef7f0;color:#0a0c0b}.secondary{border:1px solid var(--line)}.micro{margin-top:14px;font-size:11px;color:#737d77}
+.visual{min-height:590px;position:relative;display:grid;place-items:center}.graph{width:min(35vw,470px);aspect-ratio:1;position:relative}.ring{position:absolute;inset:9%;border:1px solid rgba(202,241,213,.16);border-radius:50%}.ring:before,.ring:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(202,241,213,.1)}.ring:before{inset:15%}.ring:after{inset:30%}
+.edge{position:absolute;height:1px;background:linear-gradient(90deg,transparent,rgba(204,243,216,.56),transparent);transform-origin:left center}.e1{width:48%;left:18%;top:49%;transform:rotate(-24deg)}.e2{width:43%;left:35%;top:31%;transform:rotate(37deg)}.e3{width:42%;left:20%;top:68%;transform:rotate(-43deg)}.e4{width:31%;left:47%;top:52%;transform:rotate(66deg)}.e5{width:34%;left:27%;top:29%;transform:rotate(84deg)}
+.node{position:absolute;width:17px;height:17px;border-radius:50%;border:1px solid rgba(225,249,231,.76);background:#0d1510;box-shadow:0 0 24px rgba(145,221,168,.16)}.node:after{content:"";position:absolute;inset:5px;border-radius:50%;background:#d7f6df}.n1{left:14%;top:47%}.n2{left:35%;top:19%}.n3{right:15%;top:34%}.n4{right:19%;bottom:17%}.n5{left:24%;bottom:15%}.n6{left:49%;top:47%;width:27px;height:27px;background:#17251c}.n6:after{inset:8px}
+.call{position:absolute;padding:12px 14px;border:1px solid var(--line);background:rgba(12,16,14,.76);backdrop-filter:blur(12px);border-radius:12px;min-width:150px}.call b{display:block;font-size:12px;margin-bottom:4px}.call span{font-size:10px;color:var(--muted)}.c1{top:9%;left:-6%}.c2{top:20%;right:-9%}.c3{bottom:14%;left:-3%}.c4{bottom:7%;right:-4%}
+.section{padding:2vh 5vw 9vh}.head{display:grid;grid-template-columns:1fr .7fr;gap:6vw;align-items:end;margin-bottom:25px}.head h2{margin:0;font-size:clamp(36px,4.8vw,70px);line-height:1;letter-spacing:-.05em}.head p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.stack{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:22px;overflow:hidden;background:rgba(255,255,255,.018)}.layer{min-height:255px;padding:29px 23px;border-right:1px solid var(--line)}.layer:last-child{border-right:0}.layer .num{font-size:10px;letter-spacing:.16em;color:#77817a;margin-bottom:64px}.layer h3{font-size:25px;margin:0 0 9px;letter-spacing:-.035em}.layer p{font-size:13px;line-height:1.58;color:var(--muted);margin:0}
+.manifesto{padding:2vh 5vw 10vh;display:grid;grid-template-columns:1fr 1fr;gap:7vw}.big{font-size:clamp(38px,5.1vw,76px);line-height:.98;letter-spacing:-.055em;font-weight:800}.copy{font-size:16px;line-height:1.78;color:#a9b2ac}.copy strong{color:#edf2ee}
+.signal{margin:0 5vw 9vh;border:1px solid var(--line);border-radius:20px;padding:23px 25px;display:grid;grid-template-columns:1fr .7fr;gap:30px;background:rgba(255,255,255,.025)}.signal h3{font-size:23px;margin:0 0 7px}.signal p{font-size:13px;line-height:1.6;color:var(--muted);margin:0}.right{display:flex;align-items:center;justify-content:flex-end}.pill{padding:11px 14px;border:1px solid var(--line);border-radius:999px;font-size:11px}
+footer{border-top:1px solid var(--line);margin:0 5vw;padding:24px 0 35px;color:#7d8881;font-size:12px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+@media(max-width:960px){.hero,.head,.manifesto,.signal{grid-template-columns:1fr}.visual{min-height:470px}.graph{width:min(68vw,430px)}.stack{grid-template-columns:1fr 1fr}.layer:nth-child(2){border-right:0}.layer:nth-child(-n+2){border-bottom:1px solid var(--line)}.right{justify-content:flex-start}}
+@media(max-width:580px){nav{padding-left:20px;padding-right:20px}.navmeta,.call{display:none}.hero,.section,.manifesto{padding-left:20px;padding-right:20px}.visual{min-height:390px}.stack{grid-template-columns:1fr}.layer{border-right:0;border-bottom:1px solid var(--line)}.layer:last-child{border-bottom:0}.signal{margin-left:20px;margin-right:20px}footer{margin-left:20px;margin-right:20px}}
+</style>
+</head>
+<body>
+<nav><div class="brand"><span class="logo"><i></i><i></i><i></i></span><span>GRAPHMOTIVE</span></div><div class="navmeta">Context • Reasoning • Provenance</div></nav>
+
+<section class="hero">
+<div>
+<div class="kicker">LLM systems • GraphRAG • Agent memory</div>
+<h1>Give intelligence a reason to connect.</h1>
+<p class="lead">A premium domain positioned for the layer that gives LLMs structured context, connected memory, explainable retrieval and traceable reasoning.</p>
+<div class="actions"><a class="btn primary" href="mailto:YOUR_EMAIL_HERE?subject=GraphMotive.com%20Strategic%20Acquisition">Strategic acquisition enquiry →</a><a class="btn secondary" href="#graph-stack">Explore the graph stack</a></div>
+<div class="micro">No public asking price. Strategic discussions only.</div>
+</div>
+<div class="visual"><div class="graph"><div class="ring"></div><i class="edge e1"></i><i class="edge e2"></i><i class="edge e3"></i><i class="edge e4"></i><i class="edge e5"></i><i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i><i class="node n5"></i><i class="node n6"></i><div class="call c1"><b>Context</b><span>What should the model know?</span></div><div class="call c2"><b>Retrieval</b><span>Why was this evidence selected?</span></div><div class="call c3"><b>Memory</b><span>What should the agent retain?</span></div><div class="call c4"><b>Provenance</b><span>Where did the answer come from?</span></div></div></div>
+</section>
+
+<section class="section" id="graph-stack">
+<div class="head"><h2>LLMs need more than tokens. They need relationships.</h2><p>As AI systems move from single prompts to persistent agents, graphs can connect entities, events, permissions, evidence and memory into structured context.</p></div>
+<div class="stack">
+<article class="layer"><div class="num">LAYER 01</div><h3>Context graphs</h3><p>Structure people, concepts, events and relationships so models receive context with meaning—not just more text.</p></article>
+<article class="layer"><div class="num">LAYER 02</div><h3>GraphRAG</h3><p>Connect retrieval with relationships, neighborhoods and evidence paths for richer LLM grounding.</p></article>
+<article class="layer"><div class="num">LAYER 03</div><h3>Agent memory</h3><p>Represent persistent facts, experiences and dependencies that autonomous agents can revisit and update.</p></article>
+<article class="layer"><div class="num">LAYER 04</div><h3>Provenance</h3><p>Connect outputs back to sources, relationships and decision context so AI behavior can be inspected and trusted.</p></article>
+</div>
+</section>
+
+<section class="manifesto"><div class="big">The next AI moat may be the context behind the model.</div><div class="copy"><strong>GraphMotive.com</strong> is positioned for a future category spanning GraphRAG, knowledge graphs, context engineering, agent memory, provenance, explainable retrieval and LLM reasoning infrastructure.<br><br>The name is intentionally broad enough to support a company, platform, developer tool, enterprise AI layer or graph-native intelligence product.</div></section>
+
+<section class="signal"><div><h3>Context with structure. Reasoning with provenance.</h3><p>A strategic digital asset for the emerging infrastructure layer around LLMs and autonomous agents.</p></div><div class="right"><span class="pill">GraphMotive.com</span></div></section>
+
+<footer><span>GraphMotive.com</span><span>Available for strategic acquisition or partnership discussions.</span></footer>
+
+<script>
+const v=document.querySelector('.visual'),g=document.querySelector('.graph');
+v.addEventListener('pointermove',e=>{const r=v.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;g.style.transform=`translate(${x*10}px,${y*10}px)`;});
+</script>
+</body>
+</html>
